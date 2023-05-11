@@ -15,7 +15,7 @@ with DAG(dag_id = "third_dag",
 ) as dag:
     
      my_task = DummyOperator(task_id  = "dummy_task",
-           python_callable=_random_fail.  
+           python_callable=_random_fail
      )
      slack_notification_success = SlackWebhookOperator( task_id='slack_alert1',
         http_conn_id='slack_webhook',
