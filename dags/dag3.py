@@ -3,7 +3,11 @@ from datetime import datetime
 from airflow.providers.slack.operators.slack_webhook import SlackWebhookOperator
 from airflow.operators.dummy_operator import DummyOperator
 
-
+def _random_fail():
+    random_number = random.randint(1, 100)
+    if(random_number<=50):
+        raise Exception("number less than 50, so fail")
+        
 with DAG(dag_id = "third_dag",
         schedule_interval="@daily",
         start_date = datetime(2023,1,1),
@@ -11,8 +15,7 @@ with DAG(dag_id = "third_dag",
 ) as dag:
     
      my_task = DummyOperator(task_id  = "dummy_task",
-            #    on_success_callback=lambda context: send_slack_notification.execute(context=context),
-            #    on_failure_callback=lambda context: send_slack_notification.execute(context=context),
+           python_callable=_random_fail.  
      )
      slack_notification_success = SlackWebhookOperator( task_id='slack_alert1',
         http_conn_id='slack_webhook',
