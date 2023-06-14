@@ -48,9 +48,7 @@ I have also created a postgres connection for connecting with postgres.
   
 - Now to create a dag i use minkube ssh command and then docker ps for listing all the conatiner filnally get inside the airlfow scheduler and inserted a dag from first question   <br>
 - started the airflow service and accessed the web ui trigreed the dag and get the output <br>
-  <img width="1439" alt="Screenshot 2023-06-14 at 12 50 07 PM" src="https://github.com/aroraarin/DockerAndKubernetes/assets/122515163/c56f8bae-900b-4e1a-ae47-d5c527b62e83">
 
-  <img width="1439" alt="Screenshot 2023-06-14 at 12 50 07 PM" src="https://github.com/aroraarin/DockerAndKubernetes/assets/122515163/d00cc7ef-8e14-454a-98d1-d40b9cd1cd60">
   
 - Results in table : <br>
   <img width="379" alt="Screenshot 2023-06-14 at 12 52 26 PM" src="https://github.com/aroraarin/DockerAndKubernetes/assets/122515163/a04f1d52-54f8-4aa2-9955-0a381ab39851">
