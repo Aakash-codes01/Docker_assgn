@@ -1,8 +1,8 @@
 from airflow import DAG
 from datetime import datetime
 from airflow.providers.slack.operators.slack_webhook import SlackWebhookOperator
-from airflow.operators.dummy_operator import DummyOperator
-
+from airflow.operators.python_operator import PythonOperator
+import random
 def _random_fail():
     random_number = random.randint(1, 100)
     if(random_number<=50):
@@ -14,8 +14,8 @@ with DAG(dag_id = "third_dag",
         catchup = False
 ) as dag:
     
-     my_task = DummyOperator(task_id  = "dummy_task",
-           python_callable=_random_fail
+     my_task = PythonOperator(task_id  = "dummy_task",
+           python_callable = _random_fail
      )
      slack_notification_success = SlackWebhookOperator( task_id='slack_alert1',
         http_conn_id='slack_webhook',

@@ -1,0 +1,17 @@
+[2023-05-11T15:38:01.566+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_dag.add_current_time scheduled__2022-01-01T01:18:00+00:00 [queued]>
+[2023-05-11T15:38:01.588+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_dag.add_current_time scheduled__2022-01-01T01:18:00+00:00 [queued]>
+[2023-05-11T15:38:01.592+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2023-05-11T15:38:01.621+0000] {taskinstance.py:1350} INFO - Executing <Task(PostgresOperator): add_current_time> on 2022-01-01 01:18:00+00:00
+[2023-05-11T15:38:01.627+0000] {standard_task_runner.py:57} INFO - Started process 539 to run task
+[2023-05-11T15:38:01.647+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'first_dag', 'add_current_time', 'scheduled__2022-01-01T01:18:00+00:00', '--job-id', '773', '--raw', '--subdir', 'DAGS_FOLDER/dag1.py', '--cfg-path', '/tmp/tmp2jpz8sws']
+[2023-05-11T15:38:01.648+0000] {standard_task_runner.py:85} INFO - Job 773: Subtask add_current_time
+[2023-05-11T15:38:01.795+0000] {task_command.py:410} INFO - Running <TaskInstance: first_dag.add_current_time scheduled__2022-01-01T01:18:00+00:00 [running]> on host 6512d69fe404
+[2023-05-11T15:38:02.029+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='first_dag' AIRFLOW_CTX_TASK_ID='add_current_time' AIRFLOW_CTX_EXECUTION_DATE='2022-01-01T01:18:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-01-01T01:18:00+00:00'
+[2023-05-11T15:38:02.033+0000] {sql.py:262} INFO - Executing: insert into records values(default , '2023-05-11 15:38:00.563736')
+[2023-05-11T15:38:02.048+0000] {base.py:73} INFO - Using connection ID 'my_postgres_connection' for task execution.
+[2023-05-11T15:38:02.231+0000] {base.py:73} INFO - Using connection ID 'my_postgres_connection' for task execution.
+[2023-05-11T15:38:02.243+0000] {sql.py:375} INFO - Running statement: insert into records values(default , '2023-05-11 15:38:00.563736'), parameters: None
+[2023-05-11T15:38:02.253+0000] {sql.py:384} INFO - Rows affected: 1
+[2023-05-11T15:38:02.284+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=first_dag, task_id=add_current_time, execution_date=20220101T011800, start_date=20230511T153801, end_date=20230511T153802
+[2023-05-11T15:38:02.325+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2023-05-11T15:38:02.368+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

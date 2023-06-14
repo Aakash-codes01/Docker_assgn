@@ -1,0 +1,19 @@
+[2023-05-11T15:31:52.527+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: third_dag.slack_alert1 manual__2023-05-11T15:31:51.384910+00:00 [queued]>
+[2023-05-11T15:31:52.532+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: third_dag.slack_alert1 manual__2023-05-11T15:31:51.384910+00:00 [queued]>
+[2023-05-11T15:31:52.533+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2023-05-11T15:31:52.540+0000] {taskinstance.py:1350} INFO - Executing <Task(SlackWebhookOperator): slack_alert1> on 2023-05-11 15:31:51.384910+00:00
+[2023-05-11T15:31:52.544+0000] {standard_task_runner.py:57} INFO - Started process 134 to run task
+[2023-05-11T15:31:52.547+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'third_dag', 'slack_alert1', 'manual__2023-05-11T15:31:51.384910+00:00', '--job-id', '535', '--raw', '--subdir', 'DAGS_FOLDER/dag3.py', '--cfg-path', '/tmp/tmpwggrfr_1']
+[2023-05-11T15:31:52.548+0000] {standard_task_runner.py:85} INFO - Job 535: Subtask slack_alert1
+[2023-05-11T15:31:52.584+0000] {task_command.py:410} INFO - Running <TaskInstance: third_dag.slack_alert1 manual__2023-05-11T15:31:51.384910+00:00 [running]> on host 53a973574ead
+[2023-05-11T15:31:52.644+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='third_dag' AIRFLOW_CTX_TASK_ID='slack_alert1' AIRFLOW_CTX_EXECUTION_DATE='2023-05-11T15:31:51.384910+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-05-11T15:31:51.384910+00:00'
+[2023-05-11T15:31:52.645+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/providers/slack/operators/slack_webhook.py:173: UserWarning: Found unexpected keyword-argument(s) 'link_names' in `send` method. This argument(s) have no effect.
+  link_names=self.link_names,
+
+[2023-05-11T15:31:52.646+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/providers/slack/hooks/slack_webhook.py:47: UserWarning: You cannot override the default channel (chosen by the user who installed your app), username, or icon when you're using Incoming Webhooks to post messages. Instead, these values will always inherit from the associated Slack app configuration. See: https://api.slack.com/messaging/webhooks#advanced_message_formatting. It is possible to change this values only in Legacy Slack Integration Incoming Webhook: https://api.slack.com/legacy/custom-integrations/messaging/webhooks#legacy-customizations
+  resp = func(*args, **kwargs)
+
+[2023-05-11T15:31:52.654+0000] {base.py:73} INFO - Using connection ID 'slack_webhook' for task execution.
+[2023-05-11T15:31:54.129+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=third_dag, task_id=slack_alert1, execution_date=20230511T153151, start_date=20230511T153152, end_date=20230511T153154
+[2023-05-11T15:31:54.161+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2023-05-11T15:31:54.184+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

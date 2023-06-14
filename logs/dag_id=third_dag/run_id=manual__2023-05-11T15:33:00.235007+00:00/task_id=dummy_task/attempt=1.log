@@ -1,0 +1,22 @@
+[2023-05-11T15:33:00.918+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: third_dag.dummy_task manual__2023-05-11T15:33:00.235007+00:00 [queued]>
+[2023-05-11T15:33:00.924+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: third_dag.dummy_task manual__2023-05-11T15:33:00.235007+00:00 [queued]>
+[2023-05-11T15:33:00.925+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2023-05-11T15:33:00.932+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): dummy_task> on 2023-05-11 15:33:00.235007+00:00
+[2023-05-11T15:33:00.937+0000] {standard_task_runner.py:57} INFO - Started process 154 to run task
+[2023-05-11T15:33:00.940+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'third_dag', 'dummy_task', 'manual__2023-05-11T15:33:00.235007+00:00', '--job-id', '536', '--raw', '--subdir', 'DAGS_FOLDER/dag3.py', '--cfg-path', '/tmp/tmptsea5vpy']
+[2023-05-11T15:33:00.941+0000] {standard_task_runner.py:85} INFO - Job 536: Subtask dummy_task
+[2023-05-11T15:33:00.984+0000] {task_command.py:410} INFO - Running <TaskInstance: third_dag.dummy_task manual__2023-05-11T15:33:00.235007+00:00 [running]> on host 53a973574ead
+[2023-05-11T15:33:01.055+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='third_dag' AIRFLOW_CTX_TASK_ID='dummy_task' AIRFLOW_CTX_EXECUTION_DATE='2023-05-11T15:33:00.235007+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-05-11T15:33:00.235007+00:00'
+[2023-05-11T15:33:01.056+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag3.py", line 9, in _random_fail
+    raise Exception("number less than 50, so fail")
+Exception: number less than 50, so fail
+[2023-05-11T15:33:01.065+0000] {taskinstance.py:1373} INFO - Marking task as FAILED. dag_id=third_dag, task_id=dummy_task, execution_date=20230511T153300, start_date=20230511T153300, end_date=20230511T153301
+[2023-05-11T15:33:01.072+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 536 for task dummy_task (number less than 50, so fail; 154)
+[2023-05-11T15:33:01.113+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2023-05-11T15:33:01.135+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
