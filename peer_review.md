@@ -32,6 +32,27 @@
 
 ### Ankit kumar
 
+### Docker Assignment
+
+- Included all dependecies in docker-compose.yaml file
+- created connection with postgres from airlfow web ui
+- imported required module
+- Created dag with all required parameter
+- Created CREATE_TABLE TASK with using postgresOpreator
+
+### Kubernetes Assignment
+
+- installed minikube to make a kubernetes cluster.
+- with the help of postgres-deployment.yaml file, created the pod containing postgres container 
+- run below command to initialise the database and make a user.
+-  created service of type clusterIP by running postgres-service.yaml to give access to postgres pods inside the cluster.
+- kubectl apply -f postgres-service.yaml
+- used the airflow-deployment.yaml file,the pod containing airflow container will be created
+- Created a service of type loadbalancer by running airflow-service.yaml to access airflow webserver from my local system .
+- kubectl apply -f airflow-service.yaml
+- created docker_dag as time_task.py inside airflow scheduler
+ 
+
 
  
  
